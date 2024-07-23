@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-    base: "slides-create-babylon-update",
+    base: "slides-create-cli-with-unjs",
   };
 });
 

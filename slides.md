@@ -15,6 +15,7 @@ drawings:
 # slide transition: https://sli.dev/guide/animations#slide-transitions
 # transition: slide-left
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
+colorSchema: dark
 mdc: true
 fonts:
   sans: M PLUS 2
@@ -37,6 +38,8 @@ exportFilename: update-create-babylon-app-slide
 layout: two-cols
 hideInToc: true
 ---
+
+
 
 # にー兄さん
 

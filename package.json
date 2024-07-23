@@ -1,5 +1,5 @@
 {
-  "name": "slides-create-babylon-update",
+  "name": "slides-create-cli-with-unjs",
   "type": "module",
   "private": true,
   "scripts": {
