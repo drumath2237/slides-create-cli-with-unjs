@@ -117,11 +117,37 @@ level: 2
 
 # create-babylon-appの要件
 
+1. 作成するプロジェクト名を指定
+2. テンプレートを選択
+3. 設定を反映したプロジェクトを作成
+
+create-viteやNuxt CLIの動作に近いので参考にしている。
+
 ---
 level: 2
+layout: two-cols
 ---
 
-# UnJSを使ってみたくなった
+# UnJSを使ってみたい
+<br/>
+
+> UnJSは、Nuxt 開発チームが中心となって開発・メンテナンスされている、あらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリ群です。[^1]
+
+[^1]:『[UnJS にどんなツールがあるのか、上位30件すべて紹介してみた（前編）](https://zenn.dev/ytr0903/articles/c6c42147ed29be)』より
+
+便利なパッケージがたくさんあるんだなぁ
+
+自分でメンテしているCLIに使えないかな......？
+
+<style>
+.footnote-item p{
+  font-size: 1rem
+}
+</style>
+
+::right::
+
+<Tweet id="1744908147733692742" scale="0.72" class="ml-10"/>
 
 ---
 layout: section
