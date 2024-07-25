@@ -125,15 +125,21 @@ create-viteやNuxt CLIの動作に近いので参考にしている。
 
 ---
 level: 2
+---
+
+# UnJSとは
+
+> UnJSは、Nuxt 開発チームが中心となって開発・メンテナンスされている、あらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリ群です。[^1]
+
+[^1]:『[UnJS にどんなツールがあるのか、上位30件すべて紹介してみた（前編）](https://zenn.dev/ytr0903/articles/c6c42147ed29be)』より
+
+---
+level: 2
 layout: two-cols
 ---
 
 # UnJSを使ってみたい
 <br/>
-
-> UnJSは、Nuxt 開発チームが中心となって開発・メンテナンスされている、あらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリ群です。[^1]
-
-[^1]:『[UnJS にどんなツールがあるのか、上位30件すべて紹介してみた（前編）](https://zenn.dev/ytr0903/articles/c6c42147ed29be)』より
 
 便利なパッケージがたくさんあるんだなぁ
 
@@ -147,7 +153,9 @@ layout: two-cols
 
 ::right::
 
-<Tweet id="1744908147733692742" scale="0.72" class="ml-10"/>
+GANGANさんのツイートを発見
+
+<Tweet id="1744908147733692742" scale="0.65" class="ml-10"/>
 
 ---
 layout: section
@@ -161,41 +169,61 @@ level: 2
 
 # 使用したパッケージ一覧
 
----
-level: 2
----
-
-# unbuild
-
----
-level: 2
----
-
-# citty
+- unbuild
+- citty
+- jiti
+- consola
+- giget
+- pkg-types
 
 ---
 level: 2
 ---
 
-# jiti
+# <twemoji-package /> unbuild
+
+> A unified javascript build system
+
+https://unjs.io/packages/unbuild
+
 
 ---
 level: 2
 ---
 
-# consola
+# <twemoji-cityscape-at-dusk /> citty
+
+> Elegant CLI Builder
+
+https://unjs.io/packages/citty
 
 ---
 level: 2
 ---
 
-# giget
+# <twemoji-koala /> consola
+
+> Elegant Console Wrapper
+
+https://unjs.io/packages/consola
 
 ---
 level: 2
 ---
 
-# pkg-types
+# <twemoji-french-fries /> jiti
+
+---
+level: 2
+---
+
+# <twemoji-sparkles/> giget
+
+---
+level: 2
+---
+
+# <twemoji-beverage-box/> pkg-types
 
 ---
 layout: section
