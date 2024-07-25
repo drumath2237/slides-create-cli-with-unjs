@@ -1,11 +1,9 @@
 ---
 # You can also start simply with 'default'
 theme: default
-title: |
-  create-babylon-appを
-  軽率にアプデしたい
-info: Babylon.jsゆるほめLT会 vol.3での発表資料
-author: にー兄さん@drumath2237
+title: UnJSを使って軽率にCLIを作ってみたらめちゃくちゃ便利だった
+info: v-tokyo 21でのLT登壇資料
+author: にー兄さん
 class: text-left
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
@@ -25,21 +23,20 @@ hideInToc: true
 download: true
 export:
   dark: true
-exportFilename: update-create-babylon-app-slide
+exportFilename: create-cli-with-unjs
 ---
 
-# create-babylon-appを
-# [軽率に]{style="color:#33CCFF"}アプデしたい
+# UnJSを使って[軽率に]{style="color:#33CCFF"}
+# CLIを作ってみたら
+# めちゃくちゃ便利だった
 
 ### にー兄さん[@ninisan_drumath](https://twitter.com/ninisan_drumath)  
-### Babylon.js ゆるほめLT会 vol.3
+### v-tokyo #21
 
 ---
 layout: two-cols
 hideInToc: true
 ---
-
-
 
 # にー兄さん
 
@@ -67,8 +64,9 @@ hideInToc: true
 
 # 本日の話
 
-- create-babylon-appの開発進捗について共有
-- Babylon.jsの話はほぼ出てきません（おい）
+- 個人開発しているCLIでUnJSを使ってみた
+- どんなパッケージを使ったのか、用途別にご紹介
+- UnJSのパッケージが気になっている方に刺さると嬉しいです
 
 ---
 hideInToc: true
@@ -110,140 +108,68 @@ code.language-txt{
 
 ::right::
 
-<img src="/run.png" class="m-10" />
-<img src="/run-web.png" class="m-10" />
-
----
-level: 2
-layout: two-cols
----
-
-<Tweet id="1676571182483800064" scale="0.75" />
-
-::right::
-
-実は去年のゆるほめLTでも  
-発表していました。
-
----
-level: 2
-layout: center
----
-
-# たまにフォーラムに反応があった
-
-<img src="/forum-reac.png" class="size-3/4">
-
----
-level: 2
-layout: two-cols-header
----
-
-# もしかしたら公式docsに載せて......もらえなかった
-
-::left::
-
-<img src="/docss.png" class="w-5/6">
-
-::right::
-
-公式docsに載ってるViteのサンプルが普通ではないフォルダ構造になっていて混乱したらしい。
-
-公式の内容をこちらに置き換えないか？というポスト
-
-「正直なところこのツールは完璧とは程遠い」
-
-惜しい...！
+<img src="/run2.png" class="ml-10 mb-10" />
+<img src="/run-web.png" class="ml-10" />
 
 ---
 level: 2
 ---
 
-# ちゃんとメンテしよう
+# create-babylon-appの要件
 
-- ある程度需要はある気がしてきた
-- ちゃんと作れば公式ツールになっちゃうかも！？
-- えいやとリリースしてからアプデできていなかった
+---
+level: 2
+---
 
-これらにより、開発のモチベが上がってきた
+# UnJSを使ってみたくなった
 
 ---
 layout: section
 ---
 
-# アプデの進捗と目標
-
----
-level: 2
-layout: two-cols
----
-
-# ｖ0.1.7のリリース
-
-- 依存パッケージのアプデ
-- Linter/FormatterをBiomeへ移行
-- CI/CDの改善
-
-などを行い、v0.1.7を先日リリース<twemoji-party-popper />
-
-これにより作成できるプロジェクトがBabylon.js 7に対応したりした
-
-::right::
-
-<Tweet id="1809238774771273919" scale="0.65" />
+# 使用したUnJSパッケージ
 
 ---
 level: 2
 ---
 
-# Road to v1.0.0
-<br/>
-GitHub ProjectsのKanban上でタスク管理
-
-<img src="/kanban.png" />
+# 使用したパッケージ一覧
 
 ---
 level: 2
 ---
 
-# 対応したい項目たち
-
-1. より便利なテンプレートの追加
-2. UnJSパッケージへの移行
-3. コマンドライン引数の対応
-4. ドキュメントページの作成
+# unbuild
 
 ---
-level: 3
-layout: two-cols
+level: 2
 ---
 
-## テンプレートの追加
-<br/>
+# citty
 
-現状はPlayground準拠のTypeScript・JavaScript用テンプレしかない
+---
+level: 2
+---
 
-希望としては下記ラインナップにしたい
+# jiti
 
-- シンプルなテンプレート
-- Playground準拠テンプレート
-- Babylon.jsライブラリ開発テンプレート
-- コミュニティ提供テンプレート群
-  - WebXR用とかReact用とか...
+---
+level: 2
+---
 
-::right::
+# consola
 
-## UnJSパッケージへの移行
+---
+level: 2
+---
 
-UnJSから提供されているCLI作成に便利なパッケージ群に移行したい
+# giget
 
-- citty
-- consola
-- jiti
-- giget
-- unbuild
+---
+level: 2
+---
 
-<img src="https://unjs.io/favicon.svg" class="mt-10 w-[8rem]" />
+# pkg-types
 
 ---
 layout: section
@@ -255,21 +181,10 @@ layout: section
 level: 2
 ---
 
-# おわりに
-
-- create-babylon-appをちゃんとメンテします（宣言）
-  - 色んな人に便利に使ってもらえるような状況へ
-- 7月末～8月上旬くらいに1.0リリースを目標に
+# まとめ
 
 ---
 level: 2
 ---
 
-# 関連・参考
-
-- create-babylon-app（GitHub）  
-https://github.com/drumath2237/create-babylon-app
-- Kanban（GitHub Projects）  
-https://github.com/users/drumath2237/projects/13
-- create-babylon-app　v1.0に向けたアプデ作業（Zenn）  
-https://zenn.dev/drumath2237/scraps/b085d5f90b65f3
+# 参考文献
