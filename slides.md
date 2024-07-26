@@ -108,7 +108,7 @@ code.language-txt{
 
 ::right::
 
-<img src="/run2.png" class="ml-10 mb-10" />
+<img src="/run2.png" class="ml-10 mb-5" />
 <img src="/run-web.png" class="ml-10" />
 
 ---
@@ -147,7 +147,9 @@ layout: two-cols
 
 ::right::
 
-<img src="unjs.png" class="m-10" />
+<img src="https://unjs.io/favicon.svg" class="mt-5 ml-10 w-[6rem]" />
+
+<img src="unjs.png" class="ml-10 mt-5" />
 
 ---
 level: 2
@@ -397,12 +399,29 @@ layout: section
 
 ---
 level: 2
+layout: two-cols
 ---
 
 # まとめ
+
+- 自作CLIツールの技術スタックをごそっとUnJSに移行してみた
+- するとほぼ全部UnJSで機能が補えてしまった（すごい）
+- TypeScriptでCLIを作るときに使ってみてはいかがでしょうか？
+  - みんなで<twemoji-backhand-index-pointing-right/>のようになりましょう
+
+::right::
+
+<Tweet id="1814587731051487443" scale="0.8"　class="ml-5"/>
 
 ---
 level: 2
 ---
 
 # 参考文献
+
+- UnJS  
+https://unjs.io/
+- create-babylon-app　v1.0に向けたアプデ作業  
+https://zenn.dev/drumath2237/scraps/b085d5f90b65f3
+- drumath2237/create-babylon-app  
+https://github.com/drumath2237/create-babylon-app
