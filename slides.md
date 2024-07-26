@@ -125,13 +125,29 @@ create-viteやNuxt CLIの動作に近いので参考にしている。
 
 ---
 level: 2
+layout: two-cols
 ---
 
 # UnJSとは
 
-> UnJSは、Nuxt 開発チームが中心となって開発・メンテナンスされている、あらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリ群です。[^1]
+> UnJSは、Nuxt 開発チームが中心となって開発・メンテナンスされている、あらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリ群です。[^*]
 
-[^1]:『[UnJS にどんなツールがあるのか、上位30件すべて紹介してみた（前編）](https://zenn.dev/ytr0903/articles/c6c42147ed29be)』より
+[^*]:『[UnJS にどんなツールがあるのか、上位30件すべて紹介してみた（前編）](https://zenn.dev/ytr0903/articles/c6c42147ed29be)』より
+
+つまりUnJSはパッケージそのものではなく、パッケージ群のこと。
+
+2024/07/26時点で63個ものパッケージが提供されていてすごい<twemoji-backhand-index-pointing-right/>
+
+<style>
+.footnote-item,.footnote-item p{
+  font-size: 1rem
+}
+</style>
+
+
+::right::
+
+<img src="unjs.png" class="m-10" />
 
 ---
 level: 2
@@ -145,17 +161,17 @@ layout: two-cols
 
 自分でメンテしているCLIに使えないかな......？
 
-<style>
-.footnote-item p{
-  font-size: 1rem
-}
-</style>
+当初はcitty目当てで調べ始めた
+
 
 ::right::
 
+<v-click>
 GANGANさんのツイートを発見
 
-<Tweet id="1744908147733692742" scale="0.65" class="ml-10"/>
+<Tweet id="1744908147733692742" scale="0.7"/>
+</v-click>
+
 
 ---
 layout: section
@@ -178,52 +194,200 @@ level: 2
 
 ---
 level: 2
----
-
-# <twemoji-package /> unbuild
-
-> A unified javascript build system
-
-https://unjs.io/packages/unbuild
-
-
----
-level: 2
+layout: two-cols
 ---
 
 # <twemoji-cityscape-at-dusk /> citty
 
 > Elegant CLI Builder
 
-https://unjs.io/packages/citty
+いわゆるCLIフレームワーク的なものだと思う
+
+コマンドライン引数やサブコマンドなど、いい感じに設定できて良さげ
+
+今回は`run`に処理を書いただけだけど、自動で`--help`などに対応してくれるのはうれしい
+
+Nuxt CLIの中身を見ると使い方が分かりやすい
+
+::right::
+
+```ts
+import { defineCommand, runMain } from "citty";
+
+const main = defineCommand({
+  meta: {
+    name: "hello",
+    version: "1.0.0",
+    description: "My Awesome CLI App",
+  },
+  args: {
+    name: {
+      type: "positional",
+      description: "Your name",
+      required: true,
+    },
+  },
+  run({ args }) {
+    console.log(`Hi, ${args.name}!`);
+  },
+});
+
+runMain(main);
+```
 
 ---
 level: 2
+layout: two-cols
 ---
 
 # <twemoji-koala /> consola
 
 > Elegant Console Wrapper
 
-https://unjs.io/packages/consola
+コンソールログをきれいに修飾してくれる
+
+CLI使うときにUIがきれいだとテンションが上がる
+
+他にも`prompt`により話型の入力を実装できるのがうれしい  
+（inquireから移行した）
+
+```ts
+consola.info("info");
+consola.start("start");
+consola.warn("warn");
+consola.success("success");
+consola.error(new Error("This is an error"));
+consola.box("simple box");
+await consola.prompt("OK", {
+  type: "confirm",
+});
+```
+
+::right::
+
+<Tweet id="1806034836374851651" scale="0.75"/>
+
 
 ---
 level: 2
----
-
-# <twemoji-french-fries /> jiti
-
----
-level: 2
+layout: two-cols
 ---
 
 # <twemoji-sparkles/> giget
+
+> Download templates and git repositories with pleasure!
+
+GitHubなどからファイルをごそっとダウンロードしてローカルに展開できる
+
+Scaffoldingツールにはもってこいのツール
+
+内部でnypmも使っているので、ダウンロードした後にnpmやpnpmで依存解決も可能
+
+::right::
+
+使用例  
+特定のディレクトリも指定できる
+
+```ts {all|3-9}
+const githubRepoUrlBase = "gh:drumath2237/create-babylon-app/templates";
+const templateName = `${buildTool}-${language}`;
+const { dir: appDir } = await downloadTemplate(
+  `${githubRepoUrlBase}/${templateName}`,
+  {
+    dir: projectName,
+    install: doInstall,
+  },
+);
+```
+
+
+<style>
+code{
+  font-size:0.9rem
+}
+</style>
+
 
 ---
 level: 2
 ---
 
 # <twemoji-beverage-box/> pkg-types
+
+> Node.js utilities and TypeScript definitions for package.json and tsconfig.json
+
+ディレクトリやファイルパスを指定して  
+`package.json`や`tsconfig`をを読み書きできる
+
+自前で書いてもいいけど、型がついたりするのでいい感じ
+
+
+
+```ts
+// パッケージ名を変更
+const packageJson = await readPackageJSON(appDir);
+if (packageJson.name) {
+  packageJson.name = projectName;
+  const jsonPath = path.resolve(appDir, "package.json");
+  await writePackageJSON(jsonPath, packageJson);
+}
+```
+
+<style>
+  code{
+    font-size: 1rem;
+  }
+</style>
+
+
+---
+level: 2
+layout: two-cols
+---
+
+# <twemoji-french-fries /> jiti
+
+> Runtime TypeScript and ESM support for Node.js
+
+開発中にビルドせずに動作を確認するときに使用
+
+もともとはvite-nodeを使っていたが  
+なんとなく移行してみた
+
+特殊な使い方はしておらず、シンプルにtsファイルを指定して実行するだけ
+
+```sh
+pnpm exec jiti src/run.ts
+```
+
+::right::
+
+
+# <twemoji-package /> unbuild
+
+> A unified javascript build system
+
+ビルドツールの選択肢はいろいろある中で  
+元々はtscでコンパイルした.cjsを`bin`に指定して動かしていた
+
+バンドルなども考慮したいと思い移行
+
+Zero Configでも普通に動くし、`build.config.ts`にビルド設定を記述可能
+
+```ts
+import { defineBuildConfig } from "unbuild";
+
+export default defineBuildConfig({
+	entries: ["./src/index.ts"],
+});
+```
+
+<style>
+code{
+  font-size:0.75rem
+}
+</style>
+
 
 ---
 layout: section
