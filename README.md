@@ -1,7 +1,7 @@
-# ゆるほめLT vol.3スライド資料
+# v-tokyo 21 スライド資料
 
-[![Deploy](https://github.com/drumath2237/slides-create-babylon-update/actions/workflows/deploy.yml/badge.svg)](https://github.com/drumath2237/slides-create-babylon-update/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/drumath2237/slides-create-cli-with-unjs/actions/workflows/deploy.yml/badge.svg)](https://github.com/drumath2237/slides-create-cli-with-unjs/actions/workflows/deploy.yml)
 
 ## About
 
-Babylon.js勉強会主催 ゆるほめLT会 vol.3のスライド資料です。
+v-tokyoでLTした際ののスライド資料です。
