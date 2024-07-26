@@ -149,7 +149,7 @@ layout: two-cols
 
 <img src="https://unjs.io/favicon.svg" class="mt-5 ml-10 w-[6rem]" />
 
-<img src="unjs.png" class="ml-10 mt-5" />
+<img src="/unjs.png" class="ml-10 mt-5" />
 
 ---
 level: 2
